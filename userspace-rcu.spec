@@ -59,3 +59,14 @@ rm -f %{buildroot}%{_libdir}/*.la
 %{_libdir}/liburcu*.so
 %{_libdir}/pkgconfig/liburcu*.pc
 %doc API.txt ChangeLog README
+
+
+%changelog
+* Mon Apr 02 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.6.7-1
++ Revision: 788705
++ rebuild (emptylog)
+
+* Mon Apr 02 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.6.7-1
++ Revision: 788703
+- imported package userspace-rcu
+
