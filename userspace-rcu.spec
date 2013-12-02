@@ -1,10 +1,10 @@
-%define major		1
+%define major		2
 %define libname		%mklibname urcu %major
 %define develname	%mklibname urcu -d
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.6.7
+Version:	0.8.1
 Release:	1
 License:	LGPLv2.1+
 Group:		System/Libraries
@@ -58,15 +58,4 @@ rm -f %{buildroot}%{_libdir}/*.la
 %{_includedir}/urcu*.h
 %{_libdir}/liburcu*.so
 %{_libdir}/pkgconfig/liburcu*.pc
-%doc API.txt ChangeLog README
-
-
-%changelog
-* Mon Apr 02 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.6.7-1
-+ Revision: 788705
-+ rebuild (emptylog)
-
-* Mon Apr 02 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 0.6.7-1
-+ Revision: 788703
-- imported package userspace-rcu
-
+%doc %{_docdir}/userspace-rcu
