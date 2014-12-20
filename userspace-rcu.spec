@@ -46,10 +46,6 @@ Development file for the userspace RCU library (liburcu).
 %install
 %makeinstall_std
 
-%if %{mdvver} < 201200
-rm -f %{buildroot}%{_libdir}/*.la
-%endif
-
 %files -n %{libname}
 %{_libdir}/liburcu*.so.%{major}*
 
