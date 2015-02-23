@@ -4,12 +4,13 @@
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.8.1
-Release:	8
+Version:	0.8.6
+Release:	1
 License:	LGPLv2.1+
 Group:		System/Libraries
 URL:		http://lttng.org/urcu
 Source0:	http://lttng.org/files/urcu/%{name}-%{version}.tar.bz2
+Patch0:		urcu-generic-buildfix-arm-clang.patch
 
 %description
 liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library. This data
@@ -38,9 +39,10 @@ Development file for the userspace RCU library (liburcu).
 
 %prep
 %setup -q
+%apply_patches
 
 %build
-%configure2_5x --disable-static
+%configure --disable-static
 %make
 
 %install

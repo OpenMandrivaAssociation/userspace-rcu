@@ -1,4 +1,2 @@
-removed_sources:
-  userspace-rcu-0.6.7.tar.bz2: ff77001c7063c40e28a65840584740803b34730b
 sources:
-  userspace-rcu-0.8.1.tar.bz2: d927520727a103f86aa2f87c76b1ca0df90fbfed
+  userspace-rcu-0.8.6.tar.bz2: f10e9bf812557cd0c2a35a277e04010ec278d25d

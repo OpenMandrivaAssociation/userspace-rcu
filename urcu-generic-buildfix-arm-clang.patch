@@ -1,0 +1,38 @@
+--- userspace-rcu-0.8.6/urcu/uatomic/generic.h.omv~	2015-02-23 13:13:37.133488174 +0100
++++ userspace-rcu-0.8.6/urcu/uatomic/generic.h	2015-02-23 13:14:11.174821934 +0100
+@@ -59,7 +59,7 @@ extern void _uatomic_link_error(void);
+ 
+ #ifndef uatomic_cmpxchg
+ static inline __attribute__((always_inline))
+-unsigned long _uatomic_cmpxchg(void *addr, unsigned long old,
++unsigned long _uatomic_cmpxchg(int *addr, unsigned long old,
+ 			      unsigned long _new, int len)
+ {
+ 	switch (len) {
+@@ -94,7 +94,7 @@ unsigned long _uatomic_cmpxchg(void *add
+ 
+ #ifndef uatomic_and
+ static inline __attribute__((always_inline))
+-void _uatomic_and(void *addr, unsigned long val,
++void _uatomic_and(int *addr, unsigned long val,
+ 		  int len)
+ {
+ 	switch (len) {
+@@ -133,7 +133,7 @@ void _uatomic_and(void *addr, unsigned l
+ 
+ #ifndef uatomic_or
+ static inline __attribute__((always_inline))
+-void _uatomic_or(void *addr, unsigned long val,
++void _uatomic_or(int *addr, unsigned long val,
+ 		 int len)
+ {
+ 	switch (len) {
+@@ -174,7 +174,7 @@ void _uatomic_or(void *addr, unsigned lo
+ 
+ #ifndef uatomic_add_return
+ static inline __attribute__((always_inline))
+-unsigned long _uatomic_add_return(void *addr, unsigned long val,
++unsigned long _uatomic_add_return(int *addr, unsigned long val,
+ 				 int len)
+ {
+ 	switch (len) {
