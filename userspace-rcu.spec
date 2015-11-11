@@ -1,11 +1,11 @@
-%define major		2
+%define major		4
 %define libname		%mklibname urcu %major
 %define develname	%mklibname urcu -d
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.8.6
-Release:	3
+Version:	0.9.1
+Release:	1
 License:	LGPLv2.1+
 Group:		System/Libraries
 URL:		http://lttng.org/urcu
