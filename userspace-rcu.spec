@@ -42,7 +42,7 @@ Development file for the userspace RCU library (liburcu).
 %apply_patches
 
 %build
-%configure --disable-static
+%configure2_5x --disable-static
 %make
 
 %install
