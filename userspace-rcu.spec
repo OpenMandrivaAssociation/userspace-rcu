@@ -1,10 +1,10 @@
-%define major		4
-%define libname		%mklibname urcu %major
-%define develname	%mklibname urcu -d
+%define major 4
+%define libname %mklibname urcu %major
+%define develname %mklibname urcu -d
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.9.1
+Version:	0.9.4
 Release:	1
 License:	LGPLv2.1+
 Group:		System/Libraries
