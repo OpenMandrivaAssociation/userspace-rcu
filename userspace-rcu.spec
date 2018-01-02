@@ -10,7 +10,9 @@ License:	LGPLv2.1+
 Group:		System/Libraries
 URL:		http://lttng.org/urcu
 Source0:	http://lttng.org/files/urcu/%{name}-%{version}.tar.bz2
+%ifarch %{armx}
 Patch0:		urcu-generic-buildfix-arm-clang.patch
+%endif
 
 %description
 liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library. This data
