@@ -1,4 +1,4 @@
-%define major 4
+%define major 6
 %define libname %mklibname urcu %major
 %define develname %mklibname urcu -d
 
