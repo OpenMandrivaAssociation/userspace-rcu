@@ -4,7 +4,7 @@
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.10.0
+Version:	0.10.1
 Release:	1
 License:	LGPLv2.1+
 Group:		System/Libraries
@@ -23,6 +23,7 @@ accesses to detect grace periods after which memory reclamation is possible.
 
 %package -n %{libname}
 Summary:	Userspace RCU (read-copy-update) library
+Group:		System/Libraries
 
 %description -n %{libname}
 liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library. This data
@@ -40,15 +41,14 @@ Requires:	%{libname} = %{version}
 Development file for the userspace RCU library (liburcu).
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %configure --disable-static
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/liburcu*.so.%{major}*
