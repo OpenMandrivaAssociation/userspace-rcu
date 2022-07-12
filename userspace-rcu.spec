@@ -4,7 +4,7 @@
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.13.0
+Version:	0.13.1
 Release:	1
 License:	LGPLv2.1+
 Group:		System/Libraries
