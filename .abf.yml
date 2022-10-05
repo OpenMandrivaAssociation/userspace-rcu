@@ -1,2 +1,3 @@
 sources:
-  userspace-rcu-0.13.1.tar.bz2: ff346e984d692cb8e6ea557d2b043df666f90ce7
+  files-before-rpm: 3f1017fdc083e5d999ce2472eb1cf80724e5a1fc
+  userspace-rcu-0.13.2.tar.bz2: 817b872d795b1552349f9d5bb6c3e2bc6f3804eb
