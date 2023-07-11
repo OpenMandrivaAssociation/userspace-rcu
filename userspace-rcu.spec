@@ -4,8 +4,8 @@
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.13.2
-Release:	2
+Version:	0.14.0
+Release:	1
 License:	LGPLv2.1+
 Group:		System/Libraries
 URL:		http://lttng.org/urcu
