@@ -1,16 +1,23 @@
 %define major 8
-%define libname %mklibname urcu %major
+%define oldlibname %mklibname urcu 8
+%define libname %mklibname urcu
 %define develname %mklibname urcu -d
+%define gitdate 20240328
 
 Name:		userspace-rcu
 Summary:	Userspace RCU (read-copy-update) library
-Version:	0.14.0
-Release:	1
+Version:	0.14.1
+Release:	%{?gitdate:0.%{gitdate}.}1
 License:	LGPLv2.1+
 Group:		System/Libraries
 URL:		http://lttng.org/urcu
+%if 0%{?gitdate:1}
+Source0:	https://git.liburcu.org/?p=userspace-rcu.git;a=snapshot;h=HEAD;sf=tgz#/urcu-%{gitdate}.tar.xz
+%else
 Source0:	http://lttng.org/files/urcu/%{name}-%{version}.tar.bz2
-Patch0:		urcu-generic-buildfix-arm-clang.patch
+%endif
+#Patch0:		urcu-generic-buildfix-arm-clang.patch
+BuildRequires:	slibtool
 
 %description
 liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library. This data
@@ -22,6 +29,7 @@ accesses to detect grace periods after which memory reclamation is possible.
 %package -n %{libname}
 Summary:	Userspace RCU (read-copy-update) library
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n %{libname}
 liburcu is a LGPLv2.1 userspace RCU (read-copy-update) library. This data
@@ -39,14 +47,16 @@ Requires:	%{libname} = %{version}
 Development file for the userspace RCU library (liburcu).
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n userspace-rcu-%{?gitdate:HEAD-8c5aef6}%{!?gitdate:%{version}}
+
+[ -e configure ] || ./bootstrap
+%configure --disable-static --enable-compiler-atomic-builtins
 
 %build
-%configure --disable-static
-%make_build
+%make_build LIBTOOL=slibtool-shared
 
 %install
-%make_install
+%make_install LIBTOOL=slibtool-shared
 
 %files -n %{libname}
 %{_libdir}/liburcu*.so.%{major}*
