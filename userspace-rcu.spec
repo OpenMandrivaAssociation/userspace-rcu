@@ -10,7 +10,7 @@ Version:	0.14.1
 Release:	%{?gitdate:0.%{gitdate}.}1
 License:	LGPLv2.1+
 Group:		System/Libraries
-URL:		http://lttng.org/urcu
+URL:		https://lttng.org/urcu
 %if 0%{?gitdate:1}
 Source0:	https://git.liburcu.org/?p=userspace-rcu.git;a=snapshot;h=HEAD;sf=tgz#/urcu-%{gitdate}.tar.xz
 %else
