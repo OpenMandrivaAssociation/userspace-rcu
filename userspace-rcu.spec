@@ -17,6 +17,10 @@ Source0:	https://git.liburcu.org/?p=userspace-rcu.git;a=snapshot;h=HEAD;sf=tgz#/
 Source0:	http://lttng.org/files/urcu/%{name}-%{version}.tar.bz2
 %endif
 #Patch0:		urcu-generic-buildfix-arm-clang.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	make
 BuildRequires:	slibtool
 
 %description
